@@ -38,3 +38,4 @@ bool("hola") #convierte str no vacio a boolean True
 bool(5)    #convierte int diferente de 0 a boolean True
 bool(0)    #convierte int 0 a boolean False
 #fin del codigo         
+  
