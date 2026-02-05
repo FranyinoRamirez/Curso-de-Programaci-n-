@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional - Yino Wrld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --fondo: #121212;
+            --tarjeta: #1e272e;
+            --dorado: #D4AF37;
+            --texto: #CED6E0;
+            --blanco: #ffffff;
+            --sombra: 0 20px 50px rgba(0,0,0,0.8);
+            --transicion: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        body {
+            background-color: var(--fondo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+        }
+        .perfil-card {
+            background-color: var(--tarjeta);
+            width: 100%;
+            max-width: 380px;
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            transition: var(--transicion);
+        }
+        .perfil-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--dorado);
+        }
+        .foto-contenedor {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, var(--dorado), #f1c40f);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        .foto-contenedor img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--tarjeta);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dorado);
+            margin: 10px 0 5px;
+            font-size: 2rem;
+        }
+        .cargo {
+            color: var(--texto);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: #111;
+            color: var(--dorado);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transicion);
+            border: 1px solid #333;
+        }
+        .social-links a:hover {
+            background-color: var(--dorado);
+            color: #111;
+            transform: rotate(360deg);
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transicion);
+            font-family: 'Lato', sans-serif;
+        }
+        .btn-primario {
+            background-color: var(--dorado);
+            color: #111;
+        }
+        .btn-secundario {
+            background-color: transparent;
+            color: var(--dorado);
+            border: 1px solid var(--dorado);
+        }
+        .btn:hover {
+            filter: brightness(1.2);
+            letter-spacing: 1px;
+        }
+        @media (max-width: 400px) {
+            .perfil-card {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="perfil-card">
+        <div class="foto-contenedor">
+            <img src="https://scontent.fmar6-1.fna.fbcdn.net/v/t39.30808-6/474316950_2977654912411080_8814587473134565860_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=oa9S7bfcEbwQ7kNvwGzzVmx&_nc_oc=Admn8IUILrVRyclzrSVVcCk-xuhH-yYKRmzmGjK5Dzq7afSFJW2icELGC5LrRgriibI&_nc_zt=23&_nc_ht=scontent.fmar6-1.fna&_nc_gid=U6xq1SApDAU9WirMpTwFgw&oh=00_AfsI74PTGI4McWBeg6Rt-fMuYYp6axwUyvLDf8oAtv4SIw&oe=6987DBFF" alt="Yino Wrld">
+        </div>
+
+        <h1>FranyinoRamirez</h1>
+        <span class="cargo">Poeta & Programador</span>
+
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@yinowrld" title="TikTok">Tk</a>
+            <a href="https://github.com/FranyinoRamirez" title="GitHub">Gh</a>

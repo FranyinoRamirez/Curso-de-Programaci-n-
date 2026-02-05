@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #121212;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        color: #CED6E0;
+    }
+     .navbar {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        
+        background-color: #111;
+        padding: 15px 5%;
+        border-bottom: 2px solid #D4AF37;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        color: #D4AF37;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #CED6E0;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #D4AF37;
+    }
+    .hero-section {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-section h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        color: #D4AF37;
+        margin-bottom: 10px;
+    }
+</style>
+
+<header class="navbar">
+    <a href="https://www.tiktok.com/@yinowrld" class="logo">Yino Wrld</a>
+
+    <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#poemas">Poemas</a></li>
+        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</header>
+</body>
+</html>

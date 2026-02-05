@@ -1,0 +1,70 @@
+<style>
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.8;
+        }         
+    .servicios-container {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 50px;
+        flex-wrap: wrap;
+    }
+    .tarjeta {
+        box-sizing: border-box;
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+
+        background-color: #1E272E; 
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .tarjeta.primaria { border-top: 5px solid #D4AF37; } 
+    .tarjeta.secundaria { border-top: 5px solid #747D8C; } 
+    .tarjeta.terciaria { border-top: 5px solid #CC8E35; } 
+
+    .tarjeta:hover {
+        transform: translateY(-15px);
+        border-color: #D4AF37;
+        box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+    }
+
+    .tarjeta h3 {
+        color: #D4AF37;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .tarjeta p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+</style>
+
+<div class="servicios-container">
+    <div class="tarjeta primaria">
+        <h3>Escritura Creativa</h3>
+        <p>Transformamos tus ideas en versos que perduran en el tiempo.</p>
+    </div>
+
+    <div class="tarjeta secundaria">
+        <h3>Edición de Estilo</h3>
+        <p>Pulimos cada palabra para que tu mensaje brille con luz propia.</p>
+    </div>
+
+    <div class="tarjeta terciaria">
+        <h3>Consultoría SEO</h3>
+        <p>Hacemos que tu poesía sea encontrada por el mundo entero.</p>
+    </div>
+</div>

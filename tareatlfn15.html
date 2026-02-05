@@ -1,0 +1,33 @@
+<style>
+    .contenedor-magico {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 40px;
+    }
+    .texto-adaptable {
+        font-size: 1.2rem;
+    }
+    @media (max-width: 600px) {
+        
+        .contenedor-magico {
+        
+            grid-template-columns: 1fr;
+            padding: 15px;
+        }
+        .texto-adaptable {
+        
+            font-size: 1.4rem;
+        }
+        .decoracion-extra {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .hero-titulo {
+            font-size: 2.2rem; 
+        }
+    }
+</style>

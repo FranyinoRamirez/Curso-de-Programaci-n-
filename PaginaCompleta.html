@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yino Wrld | Poeta & Programador</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-fondo: #e9e7e7;
+            --color-texto: #1a1a1a;
+            --color-acento: #D4AF37;
+            --fuente-principal: 'Lato', sans-serif;
+            --fuente-titulo: 'Playfair Display', serif;
+            --transicion: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --tarjeta: #1e272e;
+            --blanco: #ffffff;
+            --sombra: 0 20px 50px rgba(0,0,0,0.8);
+        }
+        body.dark-mode {
+            --color-fondo: #121212;
+            --color-texto: #CED6E0;
+            --color-acento: #f1c40f;
+        }
+
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: var(--fuente-principal);
+            transition: background-color var(--transicion), color var(--transicion);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main { flex-grow: 1; }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #111;
+            padding: 15px 8%;
+            border-bottom: 2px solid var(--color-acento);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-family: var(--fuente-titulo);
+            color: var(--color-acento);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #CED6E0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--color-acento); }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                              url('https://cdn0.ecologiaverde.com/es/posts/2/9/7/que_tipos_de_papel_se_utilizan_para_hacer_libros_1792_600.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-family: var(--fuente-titulo); font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--color-acento); margin: 0; }
+        .hero p { font-size: 1.4rem; font-style: italic; max-width: 700px; margin-top: 10px; }
+
+        .perfil-card {
+            background-color: var(--tarjeta);
+            width: 90%;
+            max-width: 400px;
+            margin: -100px auto 50px;
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            z-index: 10;
+            transition: var(--transicion);
+        }
+
+        .perfil-card:hover { transform: translateY(-10px); border-color: var(--color-acento); }
+
+        .foto-contenedor {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, var(--color-acento), #f1c40f);
+        }
+
+        .foto-contenedor img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--tarjeta);
+        }
+
+        .btn-toggle {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            padding: 12px 20px;
+            background: var(--color-acento);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 2000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <button class="btn-toggle" onclick="document.body.classList.toggle('dark-mode')">🌓 TEMA</button>
+
+    <nav class="navbar">
+        <a href="https://www.tiktok.com/@yinowrld" class="logo">Yino Wrld</a>
+        <ul class="nav-links">
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="#poemas">Poemas</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>YinoWrld</h1>
+            <p>"Los libros son la magia de los años"</p>
+        </section>
+
+        <div class="perfil-card">
+            <div class="foto-contenedor">
+                <img src="https://scontent.fmar6-1.fna.fbcdn.net/v/t39.30808-6/474316950_2977654912411080_8814587473134565860_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=oa9S7bfcEbwQ7kNvwGzzVmx&_nc_oc=Admn8IUILrVRyclzrSVVcCk-xuhH-yYKRmzmGjK5Dzq7afSFJW2icELGC5LrRgriibI&_nc_zt=23&_nc_ht=scontent.fmar6-1.fna&_nc_gid=j26cYJvIfzTDetVqpGSMPQ&oh=00_AfuBNv3USqPYwmZbNs1QPkhBtpEEjE4MhZOMusvtfuW73A&oe=6987DBFF" alt="Yino Wrld">
+            </div>
+            <h1 style="color: var(--color-acento); font-family: var(--fuente-titulo); margin: 0;">FranyinoRamirez</h1>
+            <span style="color: #CED6E0; letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase;">Poeta & Programador</span>
+        </div>
+
+        <style>
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background-color: #111;
+            color: var(--color-acento);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transicion);
+            border: 1px solid #333;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--color-acento);
+            color: #111;
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .seccion-texto {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .seccion-texto h1, .seccion-texto h2 { 
+            font-family: var(--fuente-titulo); 
+            color: var(--color-acento); 
+        }
+
+        .seccion-texto h2 { 
+            font-size: 1.8rem; 
+            border-bottom: 1px solid #444; 
+            padding-bottom: 10px; 
+            margin-top: 50px; 
+        }
+        .tooltip { 
+            position: relative; 
+            color: var(--color-acento); 
+            font-weight: bold; 
+            cursor: help; 
+            border-bottom: 1px dashed var(--color-acento); 
+        }
+
+        .tooltip::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: #111;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            white-space: nowrap;
+            border: 1px solid var(--color-acento);
+            z-index: 100;
+        }
+
+        .tooltip:hover::before { 
+            opacity: 1; 
+            transform: translateX(-50%) scale(1); 
+        }
+    </style>
+
+    <div class="social-links">
+        <a href="https://www.tiktok.com/@yinowrld" title="TikTok Poeta" target="_blank">Poesia</a>
+        <a href="https://github.com/FranyinoRamirez" title="GitHub Programador" target="_blank">GitH</a>
+    </div>
+    </div> <article class="seccion-texto" id="biografia">
+        <h1 style="text-align: center; font-size: 3rem;"><i>Biografia de la poesia</i></h1>
+        
+        <section>
+            <h2>¿Que es la poesia?</h2>
+            <p>La <span class="tooltip" data-tooltip="Arte de componer versos">poesía</span> es un género literario milenario, originado en las primeras civilizaciones (sumerios, egipcios, 2600 a.C.) como canto oral ligado a la música, el ritmo y la religión para preservar la memoria colectiva.</p>
+        </section>
+
+        <section>
+            <h2>¿Quién inventó la poesía?</h2>
+            <p>Se cree que la poesía se remonta a la época egipcia debido a ciertas inscripciones jeroglíficas que datan de 2.600 a.C. Se trata de canciones de las que sólo se ha conservado la letra, pero no la música. El poema más antiguo del que se tiene registro es la Historia de Sinuhé, un servidor del faraón Sesostris I, cuya autoría data de hace unos 2.000 años a.C.</p>
+        </section>
+
+        <section>
+            <h2>¿Qué se logra con la poesía?</h2>
+            <p>Nos ayuda a expresar nuestras emociones. Si hay un género literario especialmente apropiado para dar forma a nuestros sentimientos, ése es la poesía. La rapidez con la que los niños captan la emotividad de un poema es realmente asombrosa.</p>
+        </section>
+                <section>
+            <h2>Una Vida de Versos</h2>
+            <p>
+                YinoWrld es un poeta, dramaturgo y prosista Italiano, perteneciente a la mítica Generación del 27. Su obra es un reflejo de la pasión, el folclore andaluz y la tragedia humana, tejida con una sensibilidad que pocos han logrado igualar en la historia de la literatura.
+            </p>
+        </section>
+
+        <section>
+            <h2>Aspectos clave de la visión poética:</h2>
+            <ul style="list-style-type: square; padding-left: 20px;">
+                <li><strong>Visión de mundo:</strong> El conjunto de ideas, creencias y emociones que un autor plasma sobre la vida.</li>
+                <li><strong>Poesía Visual:</strong> Forma experimental donde la imagen y el diseño predominan sobre el texto.</li>
+                <li><strong>Perspectiva diferente:</strong> Observar la realidad de una manera distinta a la lógica racional.</li>
+                <li><strong>La visión como poema:</strong> Obras que exploran la realidad a través de la memoria y el ojo lírico.</li>
+            </ul>
+        </section>
+    </article>
+
+    <style>
+        .galeria-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        figure {
+            background-color: #222;
+            margin: 0;
+            padding: 12px;
+            border: 1px solid var(--color-acento);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: var(--transicion);
+            max-width: 280px;
+        }
+
+        figure:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: var(--color-acento);
+            margin-top: 1px;
+            font-family: var(--fuente-titulo);
+            font-size: 0.95rem;
+        }
+        .caja-poema {
+            background: rgba(212, 175, 55, 0.03);
+            border-left: 4px solid var(--color-acento);
+            padding: 40px;
+            margin: 50px auto;
+            border-radius: 0 20px 20px 0;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .caja-poema h3 {
+            margin-top: 0;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .poema-texto {
+            font-family: var(--fuente-titulo);
+            font-size: 1.25rem;
+            line-height: 2;
+            text-align: center;
+            white-space: pre-line;
+        }
+        .loader-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .loader {
+            width: 55px;
+            height: 55px;
+            border: 6px solid #333;
+            border-top: 6px solid var(--color-acento);
+            border-radius: 50%;
+            animation: girar 1.2s linear infinite;
+        }
+
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .btn-bounce {
+            margin-top: 25px;
+            padding: 15px 35px;
+            background-color: var(--color-acento);
+            color: #111;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            animation: rebotar 2.5s ease-in-out infinite;
+            transition: 0.3s;
+        }
+
+        @keyframes rebotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .btn-bounce:hover {
+            background-color: #f1c40f;
+            animation: pulso 0.6s infinite alternate;
+        }
+
+        @keyframes pulso {
+            from { transform: scale(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+            to { transform: scale(1.08); box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        }
+    </style>
+
+    <section class="seccion-texto" id="poemas">
+        <h2 style="text-align: center;">Mis Versos Favoritos</h2>
+        
+        <div class="caja-poema">
+            <h3>Promesa olvidada</h3>
+            <p class="poema-texto">
+                En la vida hay que tener Palabra y Pensar con la Mente Clara.
+                Y no olvidemos las Promesas, que por eso se Pierden los Esfuerzo de un Corazón lleno y tan Bueno.
+                No pense que esto me pasaria de Nuevo, pero esa fue la ultima promesa que el te pidio, lo viste crecer y tambien caer pero no te me preocupes que todo sigue igual que ayer, bro no pierdas la cabeza mantente con la menta fresca y Progresa, preocura no ser como El y Promete ser Mejor que Ayer ...
+            </p>
+        </div>
+
+        <div class="galeria-container">
+        <figure>
+            <img src="https://scontent.fmar1-1.fna.fbcdn.net/v/t39.30808-6/622065262_3364020370441197_1235968901380829004_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ml74oX4Aeb4Q7kNvwHN1yYA&_nc_oc=Adm4O23Ko5X4-Rd1U1o04slSJMR4a6Wtvt5X3jLfz8bedqW1uUnaeMID0pPTKSTfy10&_nc_zt=23&_nc_ht=scontent.fmar1-1.fna&_nc_gid=z9WC77vu8CQmB_Eqby2NAg&oh=00_AfsGieFKTuvteOxzlxRtn7HFO3d3rv1I76EJSryOcydZfA&oe=6986A65A" alt="Poeta">
+            <figcaption>El inicio de todo verso.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://scontent.fmar7-1.fna.fbcdn.net/v/t39.30808-6/571430650_3274019872774581_5859625475690274978_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EwLtnYgqX6gQ7kNvwHNbsOv&_nc_oc=AdkPCSHkmxKlKNb2vQ4oSOQEFc3-QWAw8ilm5ZPSUeKQ4-BHWOjmP9zIcYnrMQxZKyU&_nc_zt=23&_nc_ht=scontent.fmar7-1.fna&_nc_gid=g6VydOo7g5glbm_WwzRJKw&oh=00_AftF20EgA8lwI8au1SV9amSmWSmp8LpvZRMe6732SWdgvg&oe=6987EBA2" alt="Libro antiguo">
+            <figcaption>Memorias de una tinta eterna.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://scontent.fmar7-1.fna.fbcdn.net/v/t39.30808-6/574580499_3277470172429551_3008654638469417130_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6Rc3oYP03P4Q7kNvwETj8BT&_nc_oc=AdmpbGm2T_cXI7VJs2juYlctLLgD0PKJcoo9auLKMpo6PchT_ylQ4SlqfqoDE11AEUc&_nc_zt=23&_nc_ht=scontent.fmar7-1.fna&_nc_gid=OZalPF5aMLsUg3gKcWIMLA&oh=00_AfscbP1BaVw-8LuLinrIuf6Eh5Yb3opbNsc4rlr4gtzs_g&oe=6986A0B0" alt="El espectador">
+            <figcaption>El espectador de tu vida</figcaption>
+        </figure>
+    </div>
+
+        <div class="caja-poema" style="border-left: none; border-right: 4px solid var(--color-acento); border-radius: 20px 0 0 20px;">
+            <h3 style="text-align: right;">Un Poema Corto</h3>
+            <p class="poema-texto" style="font-size: 1.1rem; text-align: right;">
+                No necesitas brillo ni gran escenario, pues tu apoyo es mi tesoro diario.
+                Valoro tu esfuerzo, tu calma y tu guía, aunque actúes callada, me das alegría.
+            </p>
+        </div>
+
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+          <a href="https://www.tiktok.com/@yinowrld" title="TikTok Poeta" target="_blank"><button class="btn-bounce">¡Cargar más inspiración!</button></a> 
+        </div>
+    </section>
+
+    <style>
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px 0;
+        }
+
+        .tarjeta-servicio {
+            background-color: #1E272E;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .tarjeta-servicio:hover {
+            transform: translateY(-15px);
+            border-color: var(--color-acento);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+        }
+
+        .tarjeta-servicio h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .tarjeta-servicio.primaria { border-top: 5px solid #D4AF37; }
+        .tarjeta-servicio.secundaria { border-top: 5px solid #747D8C; }
+        .tarjeta-servicio.terciaria { border-top: 5px solid #CC8E35; }
+
+        .tabla-wrapper {
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            font-family: var(--fuente-principal);
+        }
+
+        thead { background-color: #000; color: var(--color-acento); text-transform: uppercase; }
+        th, td { padding: 18px 20px; text-align: left; border-bottom: 1px solid #333; }
+        tbody tr:nth-child(even) { background-color: #222; }
+        tbody tr:hover { background-color: #2d2d2d; color: var(--color-acento); transition: 0.3s; }
+
+
+        .contacto-form {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        fieldset {
+            border: 2px solid var(--color-acento);
+            border-radius: 20px;
+            background: #1e272e;
+            padding: 35px;
+        }
+
+        legend {
+            color: var(--color-acento);
+            font-weight: bold;
+            font-family: var(--fuente-titulo);
+            font-size: 1.4rem;
+            padding: 0 15px;
+            text-transform: uppercase;
+        }
+
+        .input-poetico {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: var(--fuente-principal);
+        }
+
+        .input-poetico:focus { border-color: var(--color-acento); outline: none; }
+
+        .btn-enviar {
+            width: 100%;
+            padding: 15px;
+            background: var(--color-acento);
+            color: #111;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-enviar:hover { letter-spacing: 2px; background: #f1c40f; }
+
+
+        .btn-subir {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: var(--color-acento);
+            color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .btn-subir:hover { transform: translateY(-8px); background: #f1c40f; }
+
+        footer {
+            background-color: #000;
+            color: #555;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #333;
+        }
+    </style>
+
+    <div class="seccion-texto" id="servicios">
+        <h2 style="text-align: center;">Servicios & Consultoría</h2>
+        <div class="servicios-grid">
+            <div class="tarjeta-servicio primaria">
+                <h3>Escritura Creativa</h3>
+                <p>Transformamos tus ideas en versos que perduran en el tiempo, con métrica y alma.</p>
+            </div>
+            <div class="tarjeta-servicio secundaria">
+                <h3>Edición de Estilo</h3>
+                <p>Pulimos cada palabra para que tu mensaje brille con la luz propia de un gran autor.</p>
+            </div>
+            <div class="tarjeta-servicio terciaria">
+                <h3>Consultoría SEO</h3>
+                <p>Hacemos que tu obra y tu código sean encontrados por el mundo entero.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="seccion-texto" id="proyectos">
+        <h2 style="text-align: center;">Obras & Proyectos de Software</h2>
+        <div class="tabla-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proyecto</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>MiniAventure</strong></td>
+                        <td>Juego (Python/Minecraft Style)</td>
+                        <td style="color: #f1c40f;">En Desarrollo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Portal Cautivo</strong></td>
+                        <td>Seguridad / Redes (WiFi)</td>
+                        <td style="color: #2ecc71;">Completado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biografía Poética</strong></td>
+                        <td>Web HTML/CSS</td>
+                        <td style="color: #2ecc71;">Completado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Script Automatización</strong></td>
+                        <td>Python (Selenium/PyAutoGUI)</td>
+                        <td style="color: #3498db;">Pruebas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="seccion-texto" id="contacto">
+        <div class="contacto-form">
+            <fieldset>
+                <legend>✦ ¡Escríbeme un Verso! ✦</legend>
+                <form action="#">
+                    <input type="text" placeholder="Tu Nombre" class="input-poetico" required>
+                    <input type="email" placeholder="Tu Correo" class="input-poetico" required>
+                    <textarea placeholder="¿En qué puedo ayudarte hoy?" class="input-poetico" rows="5" required></textarea>
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                </form>
+            </fieldset>
+        </div>
+        <p style="text-align: center; color: var(--color-acento); font-style: italic; margin-top: 20px;">¿Te ha gustado mi obra?</p>
+    </section>
+
+    <a href="#inicio" class="btn-subir" title="Volver al inicio">▲</a>
+
+    <footer>
+        <p style="color: var(--color-acento); font-family: var(--fuente-titulo); font-size: 1.4rem; margin: 0;">Yino Wrld</p>
+        <p style="margin: 10px 0;">&copy; 2026 - Diseñado con elegancia por Franyino Ramirez</p>
+        <p style="font-size: 0.8rem;">Programación con Estilo | Poesía con Corazón</p>
+    </footer>
+</body>
+</html>

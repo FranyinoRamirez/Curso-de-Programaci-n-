@@ -1,0 +1,50 @@
+<style>
+    .tooltip-wrapper {
+        position: relative;
+        display: inline-block;
+        color: #D4AF37;
+        cursor: help;
+        border-bottom: 1px dashed #D4AF37;
+        font-weight: bold;
+    }
+    .tooltip-wrapper::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%; 
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        background-color: #111;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        border: 1px solid #D4AF37;
+        transition: all 0.3s ease;
+        opacity: 0;
+        z-index: 10;
+    }
+    .tooltip-wrapper::after {
+        content: "";
+        position: absolute;
+        bottom: 105%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        border-width: 8px;
+        border-style: solid;
+        border-color: #D4AF37 transparent transparent transparent;
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+    .tooltip-wrapper:hover::before,
+    .tooltip-wrapper:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+</style>
+
+<div style="padding: 100px; text-align: center; background: #121212; color: white;">
+    <p>La <span class="tooltip-wrapper" data-tooltip="Arte de componer versos">Poesia</span> 
+
+</div>

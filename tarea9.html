@@ -1,0 +1,75 @@
+<style>
+    .tabla-container {
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    table {
+        width: 100%;
+        max-width: 800px;
+        border-collapse: collapse;
+        background-color: #1a1a1a;
+        color: #CED6E0;
+        font-family: 'Lato', sans-serif;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    thead {
+        background-color: #000;
+        color: #D4AF37; 
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    th, td {
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid #333;
+    }
+    tbody tr:nth-child(odd) {
+        background-color: #1e1e1e;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #252525;
+    }
+    tbody tr:hover {
+        background-color: #2d2d2d;
+        color: #D4AF37;
+        cursor: default;
+        transition: 0.3s;
+    }
+</style>
+<section class="tabla-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Obra / Proyecto</th>
+                <th>Categoría</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MiniAventure</td>
+                <td>Juego (Python)</td>
+                <td>En Desarrollo</td>
+            </tr>
+            <tr>
+                <td>Portal Cautivo</td>
+                <td>Seguridad/Web</td>
+                <td>Completado</td>
+            </tr>
+            <tr>
+                <td>Biografía Poética</td>
+                <td>Web HTML/CSS</td>
+                <td>Aprendiendo</td>
+            </tr>
+            <tr>
+                <td>Script de Automatización</td>
+                <td>Python (Selenium)</td>
+                <td>Pruebas</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

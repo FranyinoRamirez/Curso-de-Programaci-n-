@@ -1,0 +1,131 @@
+<style>
+    fieldset {
+        border: 2px solid #d4af37;
+        border-radius: 20px;
+        padding: 0; 
+        margin: 40px auto;
+        max-width: 450px;
+        background-color: #1e272e;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        overflow: hidden;
+        font-family: 'Lato', sans-serif;
+    }
+    legend {
+        color: #d4af37;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 0 20px;
+        margin: 0 auto;
+        background-color: #1e272e;
+        border-radius: 5px;
+    }
+    .form-validado {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        color: #d4af37;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        background-color: #111;
+        border: 2px solid #333;
+        border-radius: 8px;
+        color: white;
+        font-size: 1rem;
+        font-family: 'Lato', sans-serif;
+        transition: all 0.3s ease;
+        outline: none;
+        box-sizing: border-box;
+        }
+    input:focus, textarea:focus {
+        border-color: #d4af37;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+    input:not(:placeholder-shown):valid {
+        border-color: #2ecc71;
+    }
+    input:not(:placeholder-shown):invalid {
+        border-color: #e74c3c;
+    }
+    .btn-submit {
+        width: 100%;
+        padding: 15px;
+        background-color: #d4af37;
+        border: none;
+        border-radius: 8px;
+        color: #1a1a1a;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #f1c40f;
+        transform: translateY(-2px);
+    }
+
+    form:invalid .btn-submit {
+        opacity: 0.5;
+        cursor: not-allowed;
+        filter: grayscale(1);
+    }
+</style>
+
+<fieldset>
+    <legend>✦ Contactanos ✦</legend>
+    
+    <div class="form-validado">
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="user_email">Correo Electrónico</label>
+                <input type="email" id="user_email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="user_tel">Teléfono</label>
+                <input type="tel" id="user_tel" pattern="[0-9]{7,15}" placeholder="Ej: 04121234567" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Tu mensaje poético</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tus versos o dudas..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        </form>
+    </div>
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

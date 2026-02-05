@@ -1,0 +1,53 @@
+<style>
+    :root {
+        --dorado: #D4AF37;
+    }
+    .container-animado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 50px;
+        background-color: #121212;
+    }
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #333;
+        border-top: 5px solid var(--dorado);
+        border-radius: 50%;
+        animation: girar 1s linear infinite;
+    }
+    @keyframes girar {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .btn-bounce {
+        padding: 15px 30px;
+        background-color: var(--dorado);
+        color: #000;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        animation: rebotar 2s ease-in-out infinite;
+    }
+    @keyframes rebotar {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    .btn-bounce:hover {
+        animation: pulso 0.5s infinite alternate;
+    }
+
+    @keyframes pulso {
+        from { transform: scale(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0.4); }
+        to { transform: scale(1.1); box-shadow: 0 0 20px rgba(212, 175, 55, 0.7); }
+    }
+</style>
+
+<div class="container-animado">
+    <div class="loader"></div>
+
+    <button class="btn-bounce">¡Pulsa para cargar de nuevo!</button>
+</div>
