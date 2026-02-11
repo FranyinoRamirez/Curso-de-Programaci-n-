@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering JS: ES6+ & POO</title>
+    <style>
+        :root {
+            --js-yellow: #f7df1e;
+            --js-black: #1e1e1e;
+            --dark-gray: #2d2d2d;
+            --text-white: #f0f0f0;
+            --code-green: #a9ffaf;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--js-black);
+            color: var(--text-white);
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--js-yellow);
+            color: var(--js-black);
+            text-align: center;
+        }
+
+        header h1 { font-size: 3.5rem; margin-bottom: 0; }
+        header p { font-size: 1.2rem; font-weight: bold; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .slide {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 150px;
+            gap: 50px;
+            opacity: 0; 
+            transition: all 1s ease-out;
+        }
+        .reveal-left {
+            transform: translateX(-100px);
+        }
+
+        .reveal-right {
+            transform: translateX(100px);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content { flex: 1; }
+        .content h2 { color: var(--js-yellow); font-size: 2.2rem; }
+        
+        .code-box {
+            background: var(--dark-gray);
+            padding: 20px;
+            border-left: 6px solid var(--js-yellow);
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            color: var(--code-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            overflow-x: auto;
+        }
+
+        .image-box { flex: 1; display: flex; justify-content: center; }
+        .image-box img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            border: 2px solid var(--js-yellow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .final-section {
+            text-align: center;
+            padding: 150px 20px;
+            background: linear-gradient(to bottom, var(--js-black), #000);
+        }
+
+        .final-section h2 {
+            font-size: 4rem;
+            color: var(--js-yellow);
+            margin-bottom: 10px;
+        }
+
+        .final-section p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 850px) {
+            .slide { flex-direction: column !important; text-align: center; }
+            .reveal-left, .reveal-right { transform: translateY(50px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JAVASCRIPT MODERNO</h1>
+        <p>Características ES6+ y Programación Orientada a Objetos</p><br>
+        <div>Franyino Ramirez</div>
+    </header>
+
+    <div class="container">
+        
+        <section class="slide reveal-left">
+            <div class="content">
+                <h2>Desestructuración</h2>
+                <p>Permite extraer valores de arreglos o propiedades de objetos de manera limpia y directa.</p>
+                <div class="code-box">
+<pre>
+// Objetos
+const user = { id: 1, name: 'Yino' };
+const { name } = user;
+
+// Arrays
+const colors = ['#f7df1e', '#222'];
+const [jsYellow, jsBlack] = colors;
+</pre>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=500" alt="JavaScript Code">
+            </div>
+        </section>
+
+
+          <div class="container">
+        
+        <section class="slide reveal-left">
+            <div class="content">
+                <h2>Visión General de ES6+</h2>
+                <p>Las mejoras de ES6+ permiten escribir código más limpio, legible y eficiente. Destacan características como la desestructuración, el Spread Operator, los Rest Parameters, los Template Literals y la modularización.</p>
+                <div class="code-box">
+<pre>
+// 1. Modulación & Template Literals
+const proyecto = "Web Portfolio";
+
+// 2. Desestructuración & Spread Operator
+const datos = { nombre: "Yino", xp: 5 };
+const extra = { rol: "Dev", ...datos }; // Copia y añade (Spread)
+
+const { nombre, rol } = extra; // Extrae variables
+
+// 3. Rest Parameters & Template Literals
+const mostrarStatus = (user, ...tags) => {
+  return `El ${rol} ${user} domina: ${tags.join(", ")}.`;
+};
+
+console.log(mostrarStatus(nombre, "HTML", "CSS", "Python"));
+
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="https://scontent.fmar1-1.fna.fbcdn.net/v/t39.30808-6/629089649_3380852618757972_6189852548397745139_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=i80qfqfdy-kQ7kNvwGPOf95&_nc_oc=AdmcQsGTRAJMPsoolzezKgBKV9X6UG7_6Sz4xQKPJhi9ibY3-IjGv5gz8fpXEgePfqY&_nc_zt=23&_nc_ht=scontent.fmar1-1.fna&_nc_gid=GUouHaRzRmZyp6qn36Ijmw&oh=00_Afsn7QS9q6Q3OasECkvgyGMiqMTqI21mGnJ8fFiZgPex-Q&oe=698FF354" alt="JavaScript Code">
+            </div>
+        </section>
+
+
+        <section class="slide reveal-right" style="flex-direction: row-reverse;">
+            <div class="content">
+                <h2>Spread & Rest (...)</h2>
+                <p>El operador de tres puntos permite expandir elementos (Spread) o agruparlos (Rest).</p>
+                <div class="code-box">
+<pre>
+// Spread: Copiar y unir
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+
+// Rest: Agrupar argumentos
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+</pre>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=500" alt="Coding">
+            </div>
+        </section>
+
+        <section class="slide reveal-left">
+            <div class="content">
+                <h2>Clases y Herencia (POO)</h2>
+                <p>JavaScript utiliza prototipos, pero con 'class' podemos estructurar mejor nuestro código.</p>
+                <div class="code-box">
+<pre>
+class Robot {
+  constructor(name) {
+    this.name = name;
+  }
+  saludar() { return `Hola, soy ${this.name}`; }
+}
+
+class Guerrero extends Robot {
+  atacar() { return 'PUM!'; }
+}
+</pre>
+
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=500" alt="Robot POO">
+            </div>
+        </section>
+
+        <section class="final-section">
+            <h2>¿Preguntas?</h2>
+            <p>¡Gracias por tu atención!</p>
+        </section>
+
+    </div>
+
+    <script>
+      
+        const slides = document.querySelectorAll('.slide');
+
+        const observerOptions = {
+            threshold: 0.2 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        slides.forEach(slide => {
+            observer.observe(slide);
+        });
+    </script>
+</body>
+</html>
